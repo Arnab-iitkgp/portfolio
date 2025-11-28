@@ -61,7 +61,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     <div className="flex justify-between items-center mb-8">
                         <div>
                             <h2 className="text-2xl font-serif font-bold text-zinc-900 dark:text-zinc-100">Get in touch</h2>
-                            <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">I'm always open to discussing new projects.</p>
+                            <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">I'm always open to new oppurtunities.</p>
                         </div>
                         <button onClick={onClose} className="p-2 -mr-2 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-100 dark:hover:text-zinc-200 dark:hover:bg-zinc-800 rounded-full transition-colors">
                             <X className="w-5 h-5" />
