@@ -12,6 +12,11 @@ export interface Project {
   size?: 'normal' | 'wide' | 'tall' | 'large';
 }
 
+export type ContentBlock =
+  | { type: 'text'; content: string }
+  | { type: 'code'; language: string; code: string; caption?: string }
+  | { type: 'mermaid'; diagram: string; caption?: string };
+
 export interface BlogPost {
   id: string;
   title: string;
@@ -19,6 +24,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   slug: string;
+  content?: ContentBlock[];
 }
 
 export interface Experience {
