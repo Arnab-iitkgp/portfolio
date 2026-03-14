@@ -65,7 +65,7 @@ const achievements = [
   },
   {
     title: "Competitive Programming",
-    rank: "LeetCode 1619 | CodeForces 1340 | Codechef 1577",
+    rank: "LeetCode 1681 | CodeForces 1340 | Codechef 1639",
     date: "2025",
     category: "Global",
     icon: Medal,
@@ -141,9 +141,9 @@ const SocialLink = ({ href, icon: Icon }: { href: string; icon: any }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="p-2 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-100 dark:text-zinc-500 dark:hover:text-zinc-200 dark:hover:bg-zinc-800 rounded-full transition-all"
+    className="p-2.5 bg-zinc-100/80 border border-zinc-200/50 dark:bg-zinc-800/50 dark:border-zinc-800 text-zinc-700 hover:text-zinc-900 hover:bg-zinc-200 dark:text-zinc-300 dark:hover:text-white dark:hover:bg-zinc-800 dark:hover:border-zinc-700 rounded-full transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5"
   >
-    <Icon className="w-4 h-4" />
+    <Icon className="w-5 h-5" />
   </a>
 );
 
@@ -187,10 +187,9 @@ export const Home = () => {
 
             <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-lg text-lg">
               <p class="font-serif font-medium text-lg tracking-tight">
-                “just a chill guy who likes building things that work.”
+                Passionate about building scalable web applications, GenAI
+                solutions, and solving complex algorithmic problems.
               </p>
-              Passionate about building scalable web applications, GenAI
-              solutions, and solving complex algorithmic problems.
             </p>
 
             {/* Redesigned Intro Actions - Unified Bar */}
@@ -222,8 +221,8 @@ export const Home = () => {
                 transition={{ delay: 0.4 }}
                 className="flex items-center gap-2 pl-2"
               >
-                <span className="w-px h-8 bg-zinc-100 dark:bg-zinc-800 hidden sm:block mx-2"></span>
-                <div className="flex gap-1">
+                <span className="w-px h-8 bg-zinc-200 dark:bg-zinc-800 hidden sm:block mx-1"></span>
+                <div className="flex gap-2.5 ml-1">
                   <SocialLink
                     href="https://github.com/Arnab-iitkgp"
                     icon={Github}
