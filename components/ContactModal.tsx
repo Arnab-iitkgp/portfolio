@@ -9,7 +9,8 @@ interface ContactModalProps {
 
 export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   // Reset form when modal opens/closes
   useEffect(() => {
@@ -25,14 +26,29 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
+    setErrorMessage('');
     
-    // Simulate network request
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setStatus('success');
-    setTimeout(() => {
-        onClose();
-    }, 2500);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formState),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setStatus('success');
+      setTimeout(() => {
+          onClose();
+      }, 2500);
+    } catch (error: any) {
+      console.error('Contact form error:', error);
+      setStatus('error');
+      setErrorMessage(error.message || 'Something went wrong. Please try again later.');
+    }
   };
 
   return (
@@ -70,18 +86,24 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
                     {status === 'success' ? (
                         <motion.div 
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            className="py-12 flex flex-col items-center text-center"
+                            initial={{ opacity: 0, y: 4 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
+                            className="py-16 flex flex-col items-center justify-center text-center"
                         >
-                            <div className="w-16 h-16 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-full flex items-center justify-center mb-6 shadow-lg shadow-zinc-900/20">
-                                <CheckCircle className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Message Sent</h3>
-                            <p className="text-zinc-500 dark:text-zinc-400">Thanks for reaching out! I'll get back to you as soon as possible.</p>
+                            <CheckCircle className="w-8 h-8 text-zinc-300 dark:text-zinc-600 mb-5" strokeWidth={1.5} />
+                            <h3 className="text-xl font-serif text-zinc-900 dark:text-zinc-100 mb-2">Message sent.</h3>
+                            <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                                Thank you for reaching out. I'll get back to you shortly.
+                            </p>
                         </motion.div>
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-5">
+                            {status === 'error' && (
+                                <div className="p-3 text-sm font-medium text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                                    {errorMessage}
+                                </div>
+                            )}
                             <div className="space-y-1.5">
                                 <label htmlFor="name" className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Name</label>
                                 <input 

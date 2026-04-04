@@ -99,7 +99,7 @@ const Education = [
     degree: "B.Tech. in Chemical Engineering",
     institution: "Indian Institute of Technology, Kharagpur",
     period: "2023 - 2027",
-    gpa: "8.32/10",
+    gpa: "8.36/10",
   },
   {
     degree: "Class 12th",
