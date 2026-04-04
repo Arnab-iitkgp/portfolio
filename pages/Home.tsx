@@ -20,6 +20,7 @@ import {
 import { Link } from "react-router-dom";
 import { blogPosts } from "../content";
 import { useContact } from "../context/ContactContext";
+import { SpotifyNowPlaying } from "../components/SpotifyNowPlaying";
 
 const experiences = [
   {
@@ -262,6 +263,9 @@ export const Home = () => {
       {/* Separator */}
       <div className="w-full h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent" />
 
+      {/* Spotify Now Playing */}
+      <SpotifyNowPlaying />
+
       {/* Tech Stack */}
       <section>
         <h3 className="text-xs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-6">
@@ -289,6 +293,7 @@ export const Home = () => {
             </motion.button>
           ))}
         </div>
+
       </section>
 
       {/* Education - Separated Row */}
