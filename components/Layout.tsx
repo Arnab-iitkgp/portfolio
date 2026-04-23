@@ -6,6 +6,7 @@ import { useContact } from '../context/ContactContext';
 import { useTheme } from '../context/ThemeContext';
 import { ContactModal } from './ContactModal';
 import { FileText } from 'lucide-react'; // Import FileText icon
+import { DynamicQuote } from './DynamicQuote';
 
 const NavItem = ({ to, icon: Icon, label }: { to: string; icon: any; label: string }) => {
   const location = useLocation();
@@ -138,6 +139,10 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
              {children}
            </motion.div>
         </AnimatePresence>
+
+        <div className="mt-24 w-full">
+          <DynamicQuote />
+        </div>
       </main>
 
       <footer className="w-full max-w-3xl px-6 md:px-8 py-12 mt-12 border-t border-zinc-100 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-400 dark:text-zinc-500 gap-4 transition-colors duration-300">

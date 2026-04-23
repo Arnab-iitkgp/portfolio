@@ -66,7 +66,7 @@ const achievements = [
   },
   {
     title: "Competitive Programming",
-    rank: "LeetCode 1681 | CodeForces 1340 | Codechef 1639",
+    rank: "LeetCode 1707 | CodeForces 1340 | Codechef 1639",
     date: "2025",
     category: "Global",
     icon: Medal,
@@ -398,6 +398,7 @@ export const Home = () => {
               description:
                 "AI-powered code review tool that automatically analyzes pull requests line-by-line using Google Gemini.",
               tags: ["Next.js", "Gemini AI", "RAG", "GitHub"],
+              link: "https://codelens-app.vercel.app/",
               github: "https://github.com/Arnab-iitkgp/codelens",
               image: "/projects/codelens.png",
               featured: true,
@@ -405,7 +406,7 @@ export const Home = () => {
             {
               title: "CargoRoute",
               description:
-                "Backend using Genetic Algorithm for multi-stop delivery routes. Handles 50 nodes in under 5 seconds. Interactive frontend with Leaflet.js and OpenRouteService integration, boosting accuracy by 80%.",
+                "VRP optimizer using Genetic Algorithms for multi-stop delivery routes. Interactive React frontend.",
               tags: [
                 "Node.js",
                 "React",
@@ -476,7 +477,7 @@ export const Home = () => {
                   <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed line-clamp-2 mb-4 flex-grow">
+                  <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed mb-4 flex-grow">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-auto">
@@ -574,17 +575,6 @@ export const Home = () => {
       {/* About Me Section - Added at the bottom */}
       <section className="pt-12 border-t border-zinc-100 dark:border-zinc-800">
         <div className="flex flex-col md:flex-row gap-10 items-start">
-          {/* Avatar / Image */}
-          <div className="shrink-0">
-            <div className="w-40 h-40 md:w-56 md:h-56 bg-zinc-900 border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm relative rounded-full">
-              <img
-                src="/pf.jpg"
-                alt="About Me"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
           {/* Content */}
           <div className="flex-1 space-y-6">
             <div>
@@ -602,7 +592,7 @@ export const Home = () => {
                 Key Skills
               </h3>
               <div className="flex flex-wrap gap-2">
-                {["C++", "React", "Node.js", "Python", "MongoDB"].map(
+                {["C++", "React", "Node.js", "Python", "TypeScript", "PostgreSQL", "MongoDB", "AWS", "Docker", "CI/CD"].map(
                   (skill, i) => (
                     <motion.span
                       key={skill}
