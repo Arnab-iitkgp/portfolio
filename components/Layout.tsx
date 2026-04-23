@@ -75,8 +75,8 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       {/* Mobile Top Bar - Branding */}
       <header className="md:hidden fixed top-0 left-0 right-0 z-50 px-6 py-3 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-lg border-b border-zinc-200 dark:border-zinc-800 flex justify-between items-center transition-colors duration-300">
           <div className="flex items-center gap-3">
-               <div className="w-8 h-8 bg-zinc-900 overflow-hidden rounded-full ring-1 ring-zinc-100 dark:ring-zinc-800">
-                 <img src="/pff.jpg" alt="User" className="w-full h-full object-cover" />
+               <div className="w-6 h-6 bg-zinc-900 overflow-hidden border border-zinc-200 dark:border-zinc-800 rounded-md shadow-sm">
+                 <img src="/pixel.png" alt="User" className="w-full h-full object-cover" />
                </div>
                <span className="font-serif font-bold text-lg text-zinc-900 dark:text-zinc-100 tracking-tight">Arnab | Web Developer</span>
           </div>
@@ -94,7 +94,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* Logo Area */}
             <div className="pl-3 pr-4 py-2 border-r border-zinc-100 dark:border-zinc-800 flex items-center gap-3">
                <div className="w-8 h-8 bg-zinc-900 overflow-hidden ring-1 ring-zinc-100 dark:ring-zinc-800">
-                 <img src="/pff.jpg" alt="User" className="w-full h-full object-cover" />
+                 <img src="/pixel.png" alt="User" className="w-full h-full object-cover" />
                </div>
             </div>
             
