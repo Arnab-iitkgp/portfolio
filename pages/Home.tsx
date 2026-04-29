@@ -109,7 +109,7 @@ const Education = [
   },
 ];
 const RotatingText = () => {
-  const words = ["Software Developer", "Competitive Programmer"];
+  const words = ["AI and Backend Engineer", "Competitive Programmer"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -186,11 +186,8 @@ export const Home = () => {
               </div>
             </div>
 
-            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-lg text-lg">
-              <p class="font-serif font-medium text-lg tracking-tight">
-                Passionate about building scalable web applications, GenAI
-                solutions, and solving complex algorithmic problems.
-              </p>
+            <p className="font-serif font-medium text-lg tracking-tight text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-lg">
+              Pre-final year at IIT Kharagpur. Building high-performance backends, RAG systems, and optimized algorithms.
             </p>
 
             {/* Redesigned Intro Actions - Unified Bar */}

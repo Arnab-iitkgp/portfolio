@@ -7,6 +7,7 @@ import { useTheme } from '../context/ThemeContext';
 import { ContactModal } from './ContactModal';
 import { FileText } from 'lucide-react'; // Import FileText icon
 import { DynamicQuote } from './DynamicQuote';
+import { VisitorCounter } from './VisitorCounter';
 
 const NavItem = ({ to, icon: Icon, label }: { to: string; icon: any; label: string }) => {
   const location = useLocation();
@@ -78,7 +79,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                <div className="w-6 h-6 bg-zinc-900 overflow-hidden border border-zinc-200 dark:border-zinc-800 rounded-md shadow-sm">
                  <img src="/pixel.png" alt="User" className="w-full h-full object-cover" />
                </div>
-               <span className="font-serif font-bold text-lg text-zinc-900 dark:text-zinc-100 tracking-tight">Arnab | Web Developer</span>
+               <span className="font-serif font-bold text-lg text-zinc-900 dark:text-zinc-100 tracking-tight">Arnab Chakraborty</span>
           </div>
           <button
             onClick={toggleTheme}
@@ -146,7 +147,10 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       </main>
 
       <footer className="w-full max-w-3xl px-6 md:px-8 py-12 mt-12 border-t border-zinc-100 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-400 dark:text-zinc-500 gap-4 transition-colors duration-300">
-        <p className="font-mono text-xs">© {new Date().getFullYear()} Arnab Chakraborty.</p>
+        <div className="flex flex-col gap-1 items-center md:items-start">
+          <p className="font-mono text-xs">© {new Date().getFullYear()} Arnab Chakraborty.</p>
+          <VisitorCounter />
+        </div>
         <div className="flex gap-2">
           <FooterLink href="https://github.com/Arnab-iitkgp" icon={Github} />
           <FooterLink href="https://www.linkedin.com/in/arnab-dev/" icon={Linkedin} />

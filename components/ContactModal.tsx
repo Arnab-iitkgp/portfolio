@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, Loader2, CheckCircle } from 'lucide-react';
+import { X, Send, Loader2, CheckCircle, Mail, Linkedin } from 'lucide-react';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -158,6 +158,26 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                             </button>
                         </form>
                     )}
+                    
+                    <div className="border-t border-zinc-100 dark:border-zinc-800 pt-6 mt-6">
+                        <p className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-[0.2em] mb-4 text-center">Or connect directly</p>
+                        <div className="flex gap-3">
+                            <a 
+                                href="mailto:arnabchakraborty7574@gmail.com" 
+                                className="flex-1 flex items-center justify-center gap-2 py-3 bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-xl text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                            >
+                                <Mail className="w-4 h-4" /> Gmail
+                            </a>
+                            <a 
+                                href="https://www.linkedin.com/in/arnab-dev/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="flex-1 flex items-center justify-center gap-2 py-3 bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-xl text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                            >
+                                <Linkedin className="w-4 h-4" /> LinkedIn
+                            </a>
+                        </div>
+                    </div>
                  </div>
                </motion.div>
            </div>
